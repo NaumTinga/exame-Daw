@@ -236,6 +236,12 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'Inicio',
+            'url'         => '#',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
+            'classes'     => 'mt-2'
+        ],
+        [
             'text'      => 'Paciente',
             'icon'      => 'fas fa-fw fa-head-side-mask',
             'submenu'   => [
@@ -269,11 +275,11 @@ return [
             'submenu'   => [
                 [
                     'text' => 'Todos Usuarios',
-                    'url'  => 'admin/users'
+                    'url'  => 'admin/usuarios'
                 ],
                 [
                     'text' => 'Adicionar Novo',
-                    'url'  => 'admin/users/create'
+                    'url'  => 'admin/usuarios/create'
                 ]
             ]
         ]
