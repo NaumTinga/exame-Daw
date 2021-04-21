@@ -5,7 +5,7 @@
 @section('content_header')
 <div class="row mb-2">
     <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Adicionar Medicos</h1>
+        <h1 class="m-0 text-dark">Actualizar Medicos</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -22,7 +22,7 @@
 		<div class="card-header">
 		</div>
 		<div class="card-body" style="padding: 20px;">
-			{!! Form::open(['method'=>'POST','action'=>['App\Http\Controllers\MedicoController@store'],'id'=>'form','files'=>true]) !!}
+			{!! Form::model($medico, ['method'=>'PATCH','action'=>['App\Http\Controllers\MedicoController@update', $medico->id],'id'=>'form', 'files'=>true]) !!}
 			<!-- Main content -->
 			<section class="content">
 				<div class="container-fluid">
@@ -70,7 +70,7 @@
 								<div class="form-group row">
 									{!! Form::label('especialidade','Especialidade:',['class'=>'col-sm-3 col-form-label']) !!}
 									<div class="col-sm-9">
-										{!! Form::textarea('especialidade',null,['class'=>'form-control' . ( $errors->has('especialidade') ? ' is-invalid' : '' ),'rows'=>3]) !!}	
+										{!! Form::textarea('sintomas',null,['class'=>'form-control' . ( $errors->has('especialidade') ? ' is-invalid' : '' ),'rows'=>3]) !!}	
 										@if($errors->has('especialidade'))
 											<div class="invalid-feedback">
 												<strong>{{ $errors->first('especialidade') }}</strong>
@@ -91,7 +91,7 @@
 								</div>
 								<div class="form-group row">
 									<div class="col-md-9 offset-3">
-										{!! Form::submit('Adicionar',['class'=>'btn btn-primary']) !!}
+										{!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
 									</div>
 								</div>
 						</div>

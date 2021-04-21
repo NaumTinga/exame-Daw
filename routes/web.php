@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('admin')->group(function(){
     Route::resource('pacientes',PacienteController::class);
+    Route::resource('medicos',MedicoController::class);
 });
