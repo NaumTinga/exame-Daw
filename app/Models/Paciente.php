@@ -9,4 +9,9 @@ class Paciente extends Model
 {
     use HasFactory;
     protected $fillable = ['nome', 'apelido', 'dataNascimento', 'sintomas', 'postoMedico'];
+
+    // public function consulta(){
+    //     return $this->hasOne(Consulta::class);
+     
+    // }
 }

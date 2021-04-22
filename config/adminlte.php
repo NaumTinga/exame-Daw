@@ -247,13 +247,16 @@ return [
             'submenu'   => [
                 [
                     'text' => 'Todos Pacientes',
-                    'url'  => 'admin/pacientes'
+                    'url'  => 'admin/pacientes',
+                    'permission' => ['listar-paciente']
                 ],
                 [
                     'text' => 'Adicionar Novo',
-                    'url'  => 'admin/pacientes/create'
+                    'url'  => 'admin/pacientes/create',
+                    'permission' => ['criar-paciente']
                 ]
             ]
+            
         ],
         [
             'text'      => 'Medico',
@@ -261,11 +264,29 @@ return [
             'submenu'   => [
                 [
                     'text' => 'Todos Medicos',
-                    'url'  => 'admin/medicos'
+                    'url'  => 'admin/medicos',
+                    'permission' => ['listar-medico']
                 ],
                 [
                     'text' => 'Adicionar Novo',
-                    'url'  => 'admin/medicos/create'
+                    'url'  => 'admin/medicos/create',
+                    'permission' => ['criar-medico']
+                ]
+            ]
+        ],
+        [
+            'text'      => 'Consulta',
+            'icon'      => 'fas fa-fw fa-user-md',
+            'submenu'   => [
+                [
+                    'text' => 'Todas Consultas',
+                    'url'  => 'admin/consultas',
+                    'permission' => ['listar-consulta']
+                ],
+                [
+                    'text' => 'Adicionar Novo',
+                    'url'  => 'admin/consultas/create',
+                    'permission' => ['criar-consulta']
                 ]
             ]
         ],
@@ -281,7 +302,12 @@ return [
                     'text' => 'Adicionar Novo',
                     'url'  => 'admin/usuarios/create'
                 ]
-            ]
+                ],
+                'permission'  => [
+                    'criar-usuario',
+                    'editar-usuario',
+                    'remover-usuario'
+                ]
         ]
     
     ],
@@ -299,13 +325,14 @@ return [
     */
 
     'filters' => [
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+          # JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+          JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
+          JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
+          JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
+          JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
+          JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
+          JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+          \App\Laratrust\MenuFilter::class,
     ],
 
     /*
